@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:search_location_app/UI/pages/home/home_page.dart';
+import 'package:search_location_app/ui/pages/home_page/home_page.dart';
+
 
 void main() {
   runApp(const MyApp());
