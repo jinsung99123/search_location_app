@@ -7,7 +7,14 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 250, 228, 245),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 250, 228, 245),
-        title: Text('HomePage')),
+        title: TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15)
+            )
+          ),
+          
+        )),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: ListView.separated(
@@ -26,7 +33,6 @@ class HomePage extends StatelessWidget {
     height: 100,
     decoration: BoxDecoration(
       color: Colors.white,
-
       borderRadius: BorderRadius.circular(15),
     ),
     child: Padding(
