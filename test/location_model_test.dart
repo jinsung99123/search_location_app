@@ -24,6 +24,7 @@ void main() {
     // 1. Map 으로 변환
     Location location = Location.fromJson(map);
     expect(location.category, '음식점>카페,디저트');
+    print(location.toJson());
     // 2. 객체로 변환
   });
 }
