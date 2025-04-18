@@ -1,28 +1,35 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 228, 245),
-      appBar: AppBar(
+    return GestureDetector(
+      onTap: (){
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 250, 228, 245),
-        title: TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15)
-            )
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 250, 228, 245),
+          title: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15)
+              )
+            ),
+            
+          )),
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: ListView.separated(
+            itemCount: 5,
+            separatorBuilder: (context, index) => SizedBox(height: 10),
+            itemBuilder: (context, index) {
+              return item();
+            },
           ),
-          
-        )),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: ListView.separated(
-          itemCount: 5,
-          separatorBuilder: (context, index) => SizedBox(height: 10),
-          itemBuilder: (context, index) {
-            return item();
-          },
         ),
       ),
     );
