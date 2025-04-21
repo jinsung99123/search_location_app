@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:search_location_app/data/model/location.dart';
+import 'package:search_location_app/ui/pages/detail_page/detail_page.dart';
 import 'package:search_location_app/ui/pages/home_page/home_view_model.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -55,7 +56,11 @@ class _HomePageState extends ConsumerState<HomePage> {
             separatorBuilder: (context, index) => SizedBox(height: 10),
             itemBuilder: (context, index) {
               final location = homeState.locations[index];
-              return item(location);
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPage(location),),);
+                },
+                child: item(location));
             },
           ),
         ),
