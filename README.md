@@ -1,16 +1,26 @@
 # search_location_app
 
-A new Flutter project.
+상권명, 지역명, 주소로 검색을 하여 해당 장소의 정보를 링크를 활용해 웹뷰로 탐색할 수 있는 앱을 만들었습니다.
+첫 번째 화면은 텍스트 폼 필드를 활용한 검색 창 화면입니다. 
+검색 화면에서 주소 및 상권,지역명을 검색하면 검색 결과물들이 최대 5개까지 생성이 되고 생성된 박스를 클릭시
+네이버 Api와 연결된 해당 결과물들의 링크로 이동합니다.
 
-## Getting Started
+## 사용법
+1. 검색 화면에서 찾고자 하는 지역명,상권명,주소를 검색합니다.
+2. 나온 결과물들의 박스를 클릭합니다.
+3. 웹뷰로 이루어진 화면으로 이동됩니다.
+4. 네이버 Api와 연결된 Link 정보들이 웹뷰를 통해 보여집니다.
 
-This project is a starting point for a Flutter application.
+### 데이터 전달
+1. 사용자 검색어 입력
+2. 검색어가 상태(State)에 저장됨
+3. 상태 변경 감지, Dio로 API 요청
+4. 받은 결과(List)를 상태로 저장
+5. 리스트를 UI에서 ref.watch로 적용
+6. 사용자가 항목 클릭시 해당 항목의 데이터 전달
+7. 웹뷰 화면으로 Navigator.push와 함께 데이터 전달
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### 개선사항
+1. 항목의 최대 출력 개수를 조정 시도
+2. 검색 결과 <b>,</b> 태그가 나타나는 현상 수정
+3. 일부 웹뷰 나타나지 않는 현상 수정 시도

@@ -33,8 +33,8 @@ class Location {
       mapx = map['mapx'],
       mapy = map['mapy'];
   static String _removeHtmlTags(String text) {
-    final regExp = RegExp(r'<.*?>'); // <b> </b> 같은 태그를 찾는 정규 표현식
-    return text.replaceAll(regExp, ''); // 태그를 제거한 후 반환
+    final regExp = RegExp(r'<.*?>');
+    return text.replaceAll(regExp, '');
   }
 
   // 2. toJson 메서드 만들기기
